@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Jaiden Web Designs</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/reviews.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i> Jaiden Web Designs
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/pages/dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="/pages/chat.html" class="nav-link">Chat</a></li>
+                <li><a href="/pages/reviews.html" class="nav-link active">Reviews</a></li>
+                <li><a href="#" onclick="logout()" class="nav-link">Sign Out</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reviews Container -->
+    <div class="reviews-container">
+        <header class="reviews-header">
+            <h1>Community Reviews</h1>
+            <p>Share your experience and see what others think</p>
+        </header>
+
+        <div class="reviews-layout">
+            <!-- Create Review -->
+            <section class="create-review glass-morphism">
+                <h2>Share Your Experience</h2>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <div class="rating-input" id="ratingInput">
+                            <input type="hidden" id="rating" name="rating" value="5">
+                            <button type="button" class="star" data-value="1"><i class="fas fa-star"></i></button>
+                            <button type="button" class="star" data-value="2"><i class="fas fa-star"></i></button>
+                            <button type="button" class="star" data-value="3"><i class="fas fa-star"></i></button>
+                            <button type="button" class="star" data-value="4"><i class="fas fa-star"></i></button>
+                            <button type="button" class="star active" data-value="5"><i class="fas fa-star"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Review Title</label>
+                        <input type="text" id="title" name="title" required placeholder="e.g., Amazing Design Experience">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewText">Your Review</label>
+                        <textarea id="reviewText" name="reviewText" rows="5" required placeholder="Tell us about your experience..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-glow">
+                        <i class="fas fa-check"></i> Submit Review
+                    </button>
+                </form>
+            </section>
+
+            <!-- Reviews List -->
+            <section class="reviews-list">
+                <h2>Community Reviews</h2>
+                
+                <!-- Filter/Sort -->
+                <div class="reviews-filter glass-morphism">
+                    <select id="sortBy" onchange="sortReviews()">
+                        <option value="recent">Most Recent</option>
+                        <option value="highest">Highest Rated</option>
+                        <option value="lowest">Lowest Rated</option>
+                        <option value="helpful">Most Helpful</option>
+                    </select>
+                </div>
+
+                <!-- Reviews Container -->
+                <div id="reviewsContainer" class="reviews-items">
+                    <p class="empty-state">No reviews yet. Be the first to share your experience!</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Overall Rating -->
+        <section class="overall-rating glass-morphism">
+            <h2>Overall Rating</h2>
+            <div class="rating-display">
+                <div class="rating-score" id="overallScore">5.0</div>
+                <div class="rating-stars" id="overallStars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="rating-count" id="ratingCount">Based on 0 reviews</div>
+            </div>
+
+            <div class="rating-breakdown">
+                <div class="breakdown-bar">
+                    <span>5 stars</span>
+                    <div class="bar"><div id="bar5" class="fill"></div></div>
+                    <span id="count5">0</span>
+                </div>
+                <div class="breakdown-bar">
+                    <span>4 stars</span>
+                    <div class="bar"><div id="bar4" class="fill"></div></div>
+                    <span id="count4">0</span>
+                </div>
+                <div class="breakdown-bar">
+                    <span>3 stars</span>
+                    <div class="bar"><div id="bar3" class="fill"></div></div>
+                    <span id="count3">0</span>
+                </div>
+                <div class="breakdown-bar">
+                    <span>2 stars</span>
+                    <div class="bar"><div id="bar2" class="fill"></div></div>
+                    <span id="count2">0</span>
+                </div>
+                <div class="breakdown-bar">
+                    <span>1 star</span>
+                    <div class="bar"><div id="bar1" class="fill"></div></div>
+                    <span id="count1">0</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 40px;">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jaiden Web Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/firebase-init.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/reviews.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

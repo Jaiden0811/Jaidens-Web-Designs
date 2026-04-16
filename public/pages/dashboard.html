@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Dashboard - Jaiden Web Designs</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i> Jaiden Web Designs
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/pages/dashboard.html" class="nav-link active">Dashboard</a></li>
+                <li><a href="/pages/chat.html" class="nav-link">Chat</a></li>
+                <li><a href="/pages/reviews.html" class="nav-link">Reviews</a></li>
+                <li><a href="#" onclick="logout()" class="nav-link">Sign Out</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar glass-morphism">
+            <div class="sidebar-header">
+                <div class="user-avatar" id="userAvatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <h3 id="userName">User Name</h3>
+                    <p id="userEmail">user@email.com</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="#overview" class="menu-item active" onclick="switchTab('overview')">
+                    <i class="fas fa-chart-pie"></i> Overview
+                </a>
+                <a href="#projects" class="menu-item" onclick="switchTab('projects')">
+                    <i class="fas fa-folder"></i> My Projects
+                </a>
+                <a href="#profile" class="menu-item" onclick="switchTab('profile')">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+                <a href="#orders" class="menu-item" onclick="switchTab('orders')">
+                    <i class="fas fa-shopping-cart"></i> Orders
+                </a>
+                <a href="#settings" class="menu-item" onclick="switchTab('settings')">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn btn-secondary" onclick="logout()">Sign Out</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Overview Tab -->
+            <section id="overview" class="tab-content active">
+                <h1>Welcome Back!</h1>
+                <div class="overview-grid">
+                    <div class="stat-card glass-morphism">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Active Projects</h3>
+                        <div class="stat-number" id="activeProjects">0</div>
+                    </div>
+                    <div class="stat-card glass-morphism">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Completed Projects</h3>
+                        <div class="stat-number" id="completedProjects">0</div>
+                    </div>
+                    <div class="stat-card glass-morphism">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>Total Spent</h3>
+                        <div class="stat-number" id="totalSpent">$0</div>
+                    </div>
+                    <div class="stat-card glass-morphism">
+                        <i class="fas fa-star"></i>
+                        <h3>Member Since</h3>
+                        <div class="stat-number" id="memberSince">--</div>
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 40px;">Recent Projects</h2>
+                <div class="projects-list" id="recentProjects">
+                    <p class="empty-state">No projects yet. <a href="/pages/order.html">Place an order</a> to get started!</p>
+                </div>
+            </section>
+
+            <!-- Projects Tab -->
+            <section id="projects" class="tab-content">
+                <h1>My Projects</h1>
+                <div class="projects-container" id="projectsContainer">
+                    <p class="empty-state">No projects yet. <a href="/pages/order.html">Create your first project</a></p>
+                </div>
+            </section>
+
+            <!-- Project Detail Modal -->
+            <div id="projectModal" class="modal glass-morphism" style="display: none;">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+                    <h2 id="projectModalTitle"></h2>
+                    
+                    <h3>Project Status</h3>
+                    <div class="status-tracker">
+                        <div class="status-step" id="step-planning">
+                            <div class="status-circle">1</div>
+                            <p>Planning</p>
+                        </div>
+                        <div class="status-step" id="step-design">
+                            <div class="status-circle">2</div>
+                            <p>Design</p>
+                        </div>
+                        <div class="status-step" id="step-development">
+                            <div class="status-circle">3</div>
+                            <p>Development</p>
+                        </div>
+                        <div class="status-step" id="step-testing">
+                            <div class="status-circle">4</div>
+                            <p>Testing</p>
+                        </div>
+                        <div class="status-step" id="step-launch">
+                            <div class="status-circle">5</div>
+                            <p>Launch</p>
+                        </div>
+                    </div>
+
+                    <h3>Project Details</h3>
+                    <div id="projectDetails"></div>
+                </div>
+            </div>
+
+            <!-- Profile Tab -->
+            <section id="profile" class="tab-content">
+                <h1>My Profile</h1>
+                <form id="profileForm" class="profile-form glass-morphism">
+                    <div class="form-group">
+                        <label for="profileName">Full Name</label>
+                        <input type="text" id="profileName" name="profileName">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profileEmail">Email</label>
+                        <input type="email" id="profileEmail" name="profileEmail" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profileCompany">Company</label>
+                        <input type="text" id="profileCompany" name="profileCompany">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profilePhone">Phone</label>
+                        <input type="tel" id="profilePhone" name="profilePhone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profileBio">Bio</label>
+                        <textarea id="profileBio" name="profileBio" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </section>
+
+            <!-- Orders Tab -->
+            <section id="orders" class="tab-content">
+                <h1>My Orders</h1>
+                <div class="orders-list" id="ordersList">
+                    <p class="empty-state">No orders yet. <a href="/pages/order.html">Place your first order</a></p>
+                </div>
+            </section>
+
+            <!-- Settings Tab -->
+            <section id="settings" class="tab-content">
+                <h1>Settings</h1>
+                <div class="settings-section glass-morphism">
+                    <h2>Password</h2>
+                    <form id="passwordForm">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" id="newPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmNewPassword">Confirm New Password</label>
+                            <input type="password" id="confirmNewPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Change Password</button>
+                    </form>
+                </div>
+
+                <div class="settings-section glass-morphism">
+                    <h2>Notifications</h2>
+                    <label class="setting-toggle">
+                        <input type="checkbox" id="emailNotifications" checked>
+                        <span>Email Notifications</span>
+                    </label>
+                    <label class="setting-toggle">
+                        <input type="checkbox" id="projectUpdates" checked>
+                        <span>Project Updates</span>
+                    </label>
+                </div>
+
+                <div class="settings-section glass-morphism danger-zone">
+                    <h2>Danger Zone</h2>
+                    <button class="btn btn-danger" onclick="deleteAccount()">Delete Account</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 40px;">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jaiden Web Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/firebase-init.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

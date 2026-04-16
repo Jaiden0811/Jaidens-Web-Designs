@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Jaiden Web Designs</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i> Jaiden Web Designs
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/pages/about.html" class="nav-link">About</a></li>
+                <li><a href="/pages/services.html" class="nav-link">Services</a></li>
+                <li><a href="/pages/pricing.html" class="nav-link active">Pricing</a></li>
+                <li><a href="/pages/contact.html" class="nav-link">Contact</a></li>
+                <li><a href="/pages/signin.html" class="nav-link auth-link">Sign In</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Pricing Plans</h1>
+        <p>Flexible Options to Fit Your Budget</p>
+    </section>
+
+    <!-- Pricing Calculator -->
+    <section class="pricing-calculator">
+        <h2>Interactive Pricing Calculator</h2>
+        <p>Customize your package and see the price in real-time</p>
+        
+        <div class="calculator-container glass-morphism">
+            <div class="calculator-features">
+                <h3>Select Features:</h3>
+                
+                <div class="feature-toggle">
+                    <label class="toggle-label">
+                        <input type="checkbox" class="feature-checkbox" data-price="500" onchange="updatePrice()">
+                        <span>Basic Responsive Website</span>
+                        <span class="feature-price">+$500</span>
+                    </label>
+                </div>
+
+                <div class="feature-toggle">
+                    <label class="toggle-label">
+                        <input type="checkbox" class="feature-checkbox" data-price="800" onchange="updatePrice()">
+                        <span>E-Commerce Functionality</span>
+                        <span class="feature-price">+$800</span>
+                    </label>
+                </div>
+
+                <div class="feature-toggle">
+                    <label class="toggle-label">
+                        <input type="checkbox" class="feature-checkbox" data-price="600" onchange="updatePrice()">
+                        <span>Advanced Analytics</span>
+                        <span class="feature-price">+$600</span>
+                    </label>
+                </div>
+
+                <div class="feature-toggle">
+                    <label class="toggle-label">
+                        <input type="checkbox" class="feature-checkbox" data-price="400" onchange="updatePrice()">
+                        <span>SEO Optimization</span>
+                        <span class="feature-price">+$400</span>
+                    </label>
+                </div>
+
+                <div class="feature-toggle">
+                    <label class="toggle-label">
+                        <input type="checkbox" class="feature-checkbox" data-price="300" onchange="updatePrice()">
+                        <span>Mobile App Integration</span>
+                        <span class="feature-price">+$300</span>
+                    </label>
+                </div>
+
+                <div class="feature-toggle">
+                    <label class="toggle-label">
+                        <input type="checkbox" class="feature-checkbox" data-price="250" onchange="updatePrice()">
+                        <span>API Integration</span>
+                        <span class="feature-price">+$250</span>
+                    </label>
+                </div>
+
+                <div class="feature-toggle">
+                    <label class="toggle-label">
+                        <input type="checkbox" class="feature-checkbox" data-price="200" onchange="updatePrice()">
+                        <span>Database Design</span>
+                        <span class="feature-price">+$200</span>
+                    </label>
+                </div>
+
+                <div class="feature-toggle">
+                    <label class="toggle-label">
+                        <input type="checkbox" class="feature-checkbox" data-price="150" onchange="updatePrice()">
+                        <span>3 Months Support</span>
+                        <span class="feature-price">+$150</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="calculator-summary glass-morphism">
+                <h3>Your Price Estimate</h3>
+                <div class="base-price">
+                    <span>Base Price:</span>
+                    <span>$0</span>
+                </div>
+                <div class="calculated-features" id="calculatedFeatures"></div>
+                <div class="total-price">
+                    <span>Total:</span>
+                    <span id="totalPrice">$0</span>
+                </div>
+                <button class="btn btn-primary btn-glow" onclick="placeOrderWithCalculator()">
+                    Proceed to Order
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preset Packages -->
+    <section class="pricing-packages">
+        <h2>Preset Packages</h2>
+        <div class="packages-grid">
+            <div class="package-card glass-morphism">
+                <div class="package-badge">Popular</div>
+                <h3>Starter</h3>
+                <div class="package-price">
+                    <span class="currency">$</span>
+                    <span class="amount">999</span>
+                </div>
+                <p class="package-description">Perfect for small businesses</p>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> Responsive website</li>
+                    <li><i class="fas fa-check"></i> 5 pages</li>
+                    <li><i class="fas fa-check"></i> Mobile optimization</li>
+                    <li><i class="fas fa-check"></i> Contact form</li>
+                    <li><i class="fas fa-check"></i> 1 month support</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="placeOrder()">Order Now</button>
+            </div>
+
+            <div class="package-card glass-morphism featured">
+                <div class="package-badge featured">Best Value</div>
+                <h3>Professional</h3>
+                <div class="package-price">
+                    <span class="currency">$</span>
+                    <span class="amount">2,499</span>
+                </div>
+                <p class="package-description">For growing businesses</p>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> Everything in Starter</li>
+                    <li><i class="fas fa-check"></i> Up to 10 pages</li>
+                    <li><i class="fas fa-check"></i> SEO optimization</li>
+                    <li><i class="fas fa-check"></i> Analytics integration</li>
+                    <li><i class="fas fa-check"></i> 3 months support</li>
+                </ul>
+                <button class="btn btn-primary btn-glow" onclick="placeOrder()">Order Now</button>
+            </div>
+
+            <div class="package-card glass-morphism">
+                <div class="package-badge">Premium</div>
+                <h3>Enterprise</h3>
+                <div class="package-price">
+                    <span class="currency">$</span>
+                    <span class="amount">4,999</span>
+                </div>
+                <p class="package-description">For large enterprises</p>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> Everything in Professional</li>
+                    <li><i class="fas fa-check"></i> Unlimited pages</li>
+                    <li><i class="fas fa-check"></i> E-Commerce functionality</li>
+                    <li><i class="fas fa-check"></i> Custom APIs</li>
+                    <li><i class="fas fa-check"></i> 6 months support</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="placeOrder()">Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Options -->
+    <section class="payment-options">
+        <h2>Payment Options</h2>
+        <p>We accept multiple payment methods for your convenience</p>
+        <div class="payment-methods">
+            <div class="payment-method glass-morphism">
+                <i class="fas fa-money-bill"></i>
+                <h3>Cash</h3>
+                <p>Direct cash payment option available</p>
+            </div>
+            <div class="payment-method glass-morphism">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Cash App</h3>
+                <p>Quick and secure payments via Cash App</p>
+            </div>
+            <div class="payment-method glass-morphism">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Venmo</h3>
+                <p>Easy peer-to-peer payments</p>
+            </div>
+            <div class="payment-method glass-morphism">
+                <i class="fas fa-credit-card"></i>
+                <h3>Gift Cards</h3>
+                <p>Amazon, Apple, Visa, and more accepted</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item glass-morphism">
+                <h3>How long does a project take?</h3>
+                <p>Most projects take 2-6 weeks depending on complexity. We'll provide a detailed timeline during the discovery phase.</p>
+            </div>
+            <div class="faq-item glass-morphism">
+                <h3>Can I modify my package after ordering?</h3>
+                <p>Yes! We're flexible and can adjust features to better meet your needs at any time.</p>
+            </div>
+            <div class="faq-item glass-morphism">
+                <h3>Do you offer refunds?</h3>
+                <p>We offer a satisfaction guarantee. If you're not happy with progress at any stage, we'll work with you to make it right.</p>
+            </div>
+            <div class="faq-item glass-morphism">
+                <h3>What's included in support?</h3>
+                <p>Support includes bug fixes, minor updates, and assistance with your site. More details in your package description.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Choose your plan and launch your online presence today</p>
+        <button class="btn btn-primary btn-glow" onclick="placeOrder()">
+            <i class="fas fa-rocket"></i> Place Order
+        </button>
+    </section>
+
+    <!-- AI Chatbot -->
+    <div class="ai-chatbot" id="aiChatbot">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow" style="display: none;">
+            <div class="chatbot-header">
+                <h3>AI Assistant</h3>
+                <button onclick="toggleChatbot()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <p>👋 Hello! Do you have questions about our pricing or packages?</p>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your message..." />
+                <button onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Jaiden Web Designs</h3>
+                <p>Professional web design and development services</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/pages/about.html">About Us</a></li>
+                    <li><a href="/pages/services.html">Services</a></li>
+                    <li><a href="/pages/pricing.html">Pricing</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:jaidentinning1@outlook.com">jaidentinning1@outlook.com</a></p>
+                <p>Phone: Available upon request</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jaiden Web Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/firebase-init.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/pricing-calculator.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/chatbot.js"></script>
+</body>
+</html>

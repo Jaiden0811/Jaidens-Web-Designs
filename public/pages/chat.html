@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Chat - Jaiden Web Designs</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/chat.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i> Jaiden Web Designs
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/pages/dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="/pages/chat.html" class="nav-link active">Chat</a></li>
+                <li><a href="/pages/reviews.html" class="nav-link">Reviews</a></li>
+                <li><a href="#" onclick="logout()" class="nav-link">Sign Out</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chat Container -->
+    <div class="chat-container">
+        <!-- Channels Sidebar -->
+        <aside class="chat-sidebar glass-morphism">
+            <h3>Channels</h3>
+            <nav class="channels-list">
+                <a href="#" class="channel-item active" data-channel="general">
+                    <i class="fas fa-hashtag"></i> General
+                </a>
+                <a href="#" class="channel-item" data-channel="support">
+                    <i class="fas fa-hashtag"></i> Support
+                </a>
+                <a href="#" class="channel-item" data-channel="announcements">
+                    <i class="fas fa-hashtag"></i> Announcements
+                </a>
+                <a href="#" class="channel-item" data-channel="showcase">
+                    <i class="fas fa-hashtag"></i> Showcase
+                </a>
+            </nav>
+
+            <div class="sidebar-section">
+                <h4>Online Users</h4>
+                <ul class="online-users" id="onlineUsers">
+                    <li><span class="online-indicator"></span> Loading...</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Chat Area -->
+        <main class="chat-main">
+            <div class="chat-header glass-morphism">
+                <h2 id="channelTitle">General Chat</h2>
+                <p id="channelDescription">Chat with other members of the Jaiden Web Designs community</p>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message system-message">
+                    <p>Welcome to the community chat! Be respectful and helpful.</p>
+                </div>
+            </div>
+
+            <div class="chat-input-area glass-morphism">
+                <form id="messageForm" class="message-form">
+                    <input type="text" id="messageInput" placeholder="Type your message..." required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 40px;">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jaiden Web Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/firebase-init.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

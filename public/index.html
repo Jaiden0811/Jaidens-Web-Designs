@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaiden Web Designs - Professional Web Solutions</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i> Jaiden Web Designs
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="/pages/about.html" class="nav-link">About</a></li>
+                <li><a href="/pages/services.html" class="nav-link">Services</a></li>
+                <li><a href="/pages/pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="/pages/contact.html" class="nav-link">Contact</a></li>
+                <li><a href="/pages/signin.html" class="nav-link auth-link">Sign In</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Build Your Digital Presence</h1>
+            <p class="hero-subtitle">Fast, Professional, Accessible Web Design for Your Business</p>
+            <button class="btn btn-primary btn-glow" onclick="placeOrder()">
+                <i class="fas fa-rocket"></i> Place Order Now
+            </button>
+        </div>
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="features-grid">
+            <div class="feature-card glass-morphism">
+                <i class="fas fa-bolt"></i>
+                <h3>Lightning Fast</h3>
+                <p>Quick turnaround times without compromising on quality</p>
+            </div>
+            <div class="feature-card glass-morphism">
+                <i class="fas fa-star"></i>
+                <h3>Professional Design</h3>
+                <p>Modern, sleek designs that make your brand stand out</p>
+            </div>
+            <div class="feature-card glass-morphism">
+                <i class="fas fa-handshake"></i>
+                <h3>Fully Accessible</h3>
+                <p>Inclusive design that works for everyone</p>
+            </div>
+            <div class="feature-card glass-morphism">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Ready</h3>
+                <p>Responsive design that looks great on all devices</p>
+            </div>
+            <div class="feature-card glass-morphism">
+                <i class="fas fa-lock"></i>
+                <h3>Secure & Reliable</h3>
+                <p>Enterprise-grade security for your peace of mind</p>
+            </div>
+            <div class="feature-card glass-morphism">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Always here to help you succeed</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats">
+        <div class="stat-item">
+            <h3>100+</h3>
+            <p>Projects Completed</p>
+        </div>
+        <div class="stat-item">
+            <h3>50+</h3>
+            <p>Happy Clients</p>
+        </div>
+        <div class="stat-item">
+            <h3>5★</h3>
+            <p>Average Rating</p>
+        </div>
+        <div class="stat-item">
+            <h3>24/7</h3>
+            <p>Support Available</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Get Started?</h2>
+            <p>Join hundreds of satisfied clients who trust us for their web design needs</p>
+            <button class="btn btn-secondary btn-glow" onclick="navigateTo('/pages/signin.html')">
+                Create Account
+            </button>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <div class="ai-chatbot" id="aiChatbot">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow" style="display: none;">
+            <div class="chatbot-header">
+                <h3>AI Assistant</h3>
+                <button onclick="toggleChatbot()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <p>👋 Hi! I'm your AI assistant. I can help you place an order, learn about our services, or answer questions about our pricing. What can I help you with?</p>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your message..." />
+                <button onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Jaiden Web Designs</h3>
+                <p>Professional web design and development services</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/pages/about.html">About Us</a></li>
+                    <li><a href="/pages/services.html">Services</a></li>
+                    <li><a href="/pages/pricing.html">Pricing</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:jaidentinning1@outlook.com">jaidentinning1@outlook.com</a></p>
+                <p>Phone: Available upon request</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jaiden Web Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/firebase-init.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/chatbot.js"></script>
+</body>
+</html>

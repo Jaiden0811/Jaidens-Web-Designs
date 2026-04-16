@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order - Jaiden Web Designs</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i> Jaiden Web Designs
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/pages/about.html" class="nav-link">About</a></li>
+                <li><a href="/pages/services.html" class="nav-link">Services</a></li>
+                <li><a href="/pages/pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="/pages/contact.html" class="nav-link">Contact</a></li>
+                <li><a href="/pages/signin.html" class="nav-link auth-link">Sign In</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Place Your Order</h1>
+        <p>Get started with your web design project today</p>
+    </section>
+
+    <!-- Order Form -->
+    <section class="order-section">
+        <div class="order-container">
+            <form id="orderForm" class="order-form glass-morphism">
+                <h2>Project Details</h2>
+
+                <div class="form-group">
+                    <label for="projectName">Project Name</label>
+                    <input type="text" id="projectName" name="projectName" required placeholder="My Awesome Website">
+                </div>
+
+                <div class="form-group">
+                    <label for="businessName">Business/Company Name</label>
+                    <input type="text" id="businessName" name="businessName" required placeholder="Your Business Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Project Description</label>
+                    <textarea id="description" name="description" rows="4" required placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget Range</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select a budget range</option>
+                        <option value="under-1000">Under $1,000</option>
+                        <option value="1000-2500">$1,000 - $2,500</option>
+                        <option value="2500-5000">$2,500 - $5,000</option>
+                        <option value="5000-10000">$5,000 - $10,000</option>
+                        <option value="over-10000">Over $10,000</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeline">Desired Timeline</label>
+                    <select id="timeline" name="timeline" required>
+                        <option value="">Select a timeline</option>
+                        <option value="urgent">ASAP (1-2 weeks)</option>
+                        <option value="standard">Standard (2-4 weeks)</option>
+                        <option value="flexible">Flexible (4+ weeks)</option>
+                    </select>
+                </div>
+
+                <h2 style="margin-top: 30px;">Contact Information</h2>
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+                </div>
+
+                <h2 style="margin-top: 30px;">Package Selection</h2>
+
+                <div class="form-group">
+                    <label for="package">Select Package</label>
+                    <select id="package" name="package" required>
+                        <option value="">Choose a package</option>
+                        <option value="starter">Starter - $999</option>
+                        <option value="professional">Professional - $2,499</option>
+                        <option value="enterprise">Enterprise - $4,999</option>
+                        <option value="custom">Custom Quote</option>
+                    </select>
+                </div>
+
+                <h2 style="margin-top: 30px;">Payment Method</h2>
+
+                <div class="payment-options-form">
+                    <div class="payment-option">
+                        <input type="radio" id="cash" name="paymentMethod" value="cash" required>
+                        <label for="cash">
+                            <i class="fas fa-money-bill"></i>
+                            <span>Cash</span>
+                        </label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="cashapp" name="paymentMethod" value="cashapp">
+                        <label for="cashapp">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Cash App</span>
+                        </label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="venmo" name="paymentMethod" value="venmo">
+                        <label for="venmo">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Venmo</span>
+                        </label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="giftcard" name="paymentMethod" value="giftcard">
+                        <label for="giftcard">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Gift Card</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="additionalInfo">Additional Information / Special Requests</label>
+                    <textarea id="additionalInfo" name="additionalInfo" rows="3" placeholder="Any other details we should know?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="agreeTerms" required>
+                        I agree to the terms and conditions
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-glow btn-block">
+                    <i class="fas fa-check"></i> Submit Order
+                </button>
+            </form>
+
+            <div id="orderMessage" class="order-message"></div>
+
+            <!-- Order Summary -->
+            <div class="order-summary glass-morphism">
+                <h3>Order Summary</h3>
+                <div class="summary-item">
+                    <span>Selected Package:</span>
+                    <span id="summaryPackage">None</span>
+                </div>
+                <div class="summary-item">
+                    <span>Payment Method:</span>
+                    <span id="summaryPayment">None</span>
+                </div>
+                <div class="summary-divider"></div>
+                <p class="summary-note">
+                    <i class="fas fa-info-circle"></i>
+                    Your order will be sent to jaidentinning1@outlook.com for processing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Jaiden Web Designs</h3>
+                <p>Professional web design and development services</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:jaidentinning1@outlook.com">jaidentinning1@outlook.com</a></p>
+                <p>Phone: Available upon request</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/pages/pricing.html">Pricing</a></li>
+                    <li><a href="/pages/services.html">Services</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jaiden Web Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/firebase-init.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/order.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

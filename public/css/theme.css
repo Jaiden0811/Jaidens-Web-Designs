@@ -206,6 +206,37 @@ p {
     box-shadow: var(--shadow-lg);
 }
 
+.btn-outline {
+    background: transparent;
+    color: var(--electric-blue);
+    border: 2px solid var(--electric-blue);
+}
+
+.btn-outline:hover {
+    background: var(--electric-blue);
+    color: var(--obsidian-black);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   HERO SECTION ENHANCEMENTS
+   ============================================ */
+
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-xl);
+}
+
+.hero-cta {
+    font-size: 1rem;
+    color: #aaa;
+    margin-top: var(--spacing-lg);
+}
+
 /* ============================================
    FORMS
    ============================================ */
